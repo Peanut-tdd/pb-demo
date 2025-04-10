@@ -1,0 +1,16 @@
+
+syntax = "proto3";
+package user;  // 声明所在包
+//option go_package = "github.com/pb-demo/pb/user";  //生成.pb文件到pb目录，定义go package
+
+
+option go_package="github.com/pb-demo/proto/user"; //生成.pb文件在当前目录下
+
+import "user/message.proto";  // 导入同包内的其他 proto 文件
+import "article/article.proto"; //导入不同包proto文件
+
+service User {
+  rpc GetUserInfo (user.UserID) returns (user.UserInfo);
+
+  rpc GetUserFavArticle (UserID) returns (article.Articles);
+}

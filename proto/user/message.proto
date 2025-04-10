@@ -1,0 +1,22 @@
+
+syntax = "proto3";
+package user;
+//option go_package = "github.com/pb-demo/pb/user";  //生成.pb文件到pb目录，定义go package
+
+
+option go_package="github.com/pb-demo/proto/user";  //生成.pb文件在当前目录下
+
+message UserID {
+  int64 ID = 1;
+}
+
+message UserInfo {
+  int64 ID = 1;
+  string Name = 2;
+  int32 Age = 3;
+  gender Gender = 4;
+  enum gender {
+    MALE = 0;
+    FEMALE = 1;
+  }
+}

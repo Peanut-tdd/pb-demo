@@ -1,0 +1,17 @@
+syntax="proto3";
+
+package article;
+
+
+//option go_package="github.com/pb-demo/pb/article";  //生成.pb文件到pb目录，定义go package
+
+option go_package="github.com/pb-demo/proto/article"; //生成.pb文件在当前目录下
+
+message Article {
+  int64 ID = 1;
+  string Title = 2;
+}
+
+message Articles {
+  repeated Article Articles = 1;  //数组
+}
